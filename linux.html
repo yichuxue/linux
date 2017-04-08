@@ -17,205 +17,1071 @@
 		i{border-left:5px solid #f60; margin-right:6px; float:left;height:20px;}
 		pre{font-size:16px; display:block; font-family:'-moz-fixed'; white-space:pre-wrap; margin:1em 0; word-wrap:break-word;}
 		pre img{width:100%;}
+        pre code{padding:2px 4px; font-size:90%; color:#c7254e;
+            background-color:#f9f2f4; border-radius:4px;}
   </style>
  </head>
- <body data-spy="scroll" data-target="">
-	<nav class="nav navbar-default">
+ <body data-spy="scroll" data-target="#navbar-example" data-offset="0" style="position:relative;">
+    <!-- linux 头部 start -->
+	<nav id="navbar-example" class="nav navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
-		<ul class="nav navbar-nav">
-			<li><a href="##">linux</a></li>
-			<li><a href="##">mysql</a></li>
-		</ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">python中级班笔记</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">linux <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#one">第一课：linux基本语法</a></li>
+                        <li><a href="#two">第二课：linux实用工具</a></li>
+                    </ul>
+                </li>
+                <li><a href="">mysql</a></li>
+            </ul>
+            </div>
 		</div>
 	</nav>
-	<div class="container">
-		<h1>linux基本语法<small >linux</small></h1>
-		<table class="table table-bordered">
-			<tr>
-				<th>#</th>
-				<th>linux常用命令</th>
-				<th>详解</th>
-				<th>案例</th>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>date</td>
-				<td>输出linux当前的时间</td>
-				<td><a href="#collapseOne"><button class="btn btn-success">查看</button></a></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>cal</td>
-				<td>输出linux当前的日历</td>
-				<td><a href="#collapseTwo"><button class="btn btn-success">查看</button></a></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>df</td>
-				<td>显示指定磁盘文件可用空间。如果没有文件名被指定，则所有当前被挂在的文件系统的可用空间将被显示。默认情况下，磁盘空间将以1kb为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示</td>
-				<td><a href="#collapseThree"><button class="btn btn-success">查看</button></a></td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>free</td>
-				<td>用来查看当前内存情况</td>
-				<td><a href="#collapseFour"><button class="btn btn-success">查看</button></a></td>
-			</tr>
-            <tr>
-                <td>5</td>
-                <td>clear</td>
-                <td>将代码界面清空</td>
-                <td><a href="#collapseFive"><button class="btn btn-success">查看</button></a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>pwd</td>
-                <td>查看当前目录</td>
-                <td><a href="#collapseSix"><button class="btn btn-success">查看</button></a></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>cd</td>
-                <td>跳转目录</td>
-                <td><a href="#collapseSeven"><button class="btn btn-success">查看</button></a></td>
-            </tr>
-		</table>
-	</div>
-	<div class="container">
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" 
-					   href="#collapseOne">date</a>
-					</h4>
-				</div>
-				<div id="collapseOne" class="panel-collapse collapse">
-					<div class="panel-body ">
-						<pre>$ dateMon<br>Apr 3 17:39:36 CST 2017</pre>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" 
-					   href="#collapseTwo">cal</a>
-					</h4>
-				</div>
-				<div id="collapseTwo" class="panel-collapse collapse">
-					<div class="panel-body ">
-						<pre>     April 2017<br>Su Mo Tu We Th Fr Sa<br>                   1<br> 2  3  4  5  6  7  8<br> 9 10 11 12 13 14 15<br>16 17 18 19 20 21 22<br>23 24 25 26 27 28 29<br>30</pre>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" 
-					   href="#collapseThree">df [选项] [文件]</a>
-					</h4>
-				</div>
-				<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body ">
-						<pre><img src="img/df.png" alt="">
-1.命令格式：
-  df [选项] [文件]
-2.命令功能
-  显示指定磁盘文件可用空间。如果没有文件名被指定，则所有当前被挂在的文件系统的可用空间将被显示。默认情况下，磁盘空间将以1kb为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示
-<i></i>以下可忽略
-3.命令功能：
-    必要参数：
-    -a 全部文件系统列表
-    -h 方便阅读方式显示
-    -H 等于“-h”,但是计算式，1k=1000，而不是1k=1024
-    -i 显示inode信息
-    -k 区块为1024字节
-    -l 只显示本地文件系统
-    -m 区块为1048576字节
-    --no-sync  忽略 sync 命令
-    -P输出格式为POSIX
-    选择参数：
-    --block-size<区块大小>  指定区块大小
-    -t<文件系统类型>  只显示选定文件系统的磁盘信息
-    -x<文件系统类型>  不显示选定文件系统的磁盘信息
-    --help  显示帮助信息
-    --version  显示版本信息
- <i></i><a href="http://www.cnblogs.com/peida/archive/2012/12/07/2806483.html" target="_brank">查看详情</a>
-						<br><i></i>dev 设备<br>sd 统称一种存储设备<br>3个硬盘插口<br>sda<br>sdb<br>sdc<br><i></i>在linux下分区是以<br>sda1<br>sda2<br>sda3<br>use%硬盘使用百分比<br><i></i>挂载<br>设备连上了，连上了还看不到，由于没有一个具体的目录与它对应，那么我要把这个设备和一个具体的目录对应起来，这个过程就是挂载</pre>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-						   href="#collapseFour">free</a>
-					</h4>
-				</div>
-				<div id="collapseFour" class="panel-collapse collapse">
-					<div class="panel-body ">
-						<pre><img src="img/free.png" alt="">
-<i></i>Mem 内存
-<i></i>Swap交换空间
-当内存不够用的时候，会临时用硬盘来充当内存</pre>
-					</div>
-				</div>
-			</div>
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion"
-                           href="#collapseFive">clear</a>
-                    </h4>
+    <div>
+        <div class="container" style="margin-top:50px;">
+            <h1>linux学习笔记 <small>课程笔记</small></h1>
+        </div>
+        <!-- linux 头部 end -->
+
+        <!-- linux第一课 基本语法 list start -->
+        <div class="container">
+            <h2 id="one">linux基本语法<small >第一课</small></h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="">#</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">linux常用命令</th>
+                    <th class="">详解</th>
+                    <th class="">案例</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>date</td>
+                    <td>输出linux当前的时间</td>
+                    <td><a href="#lone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>cal</td>
+                    <td>输出linux当前的日历</td>
+                    <td><a href="#ltwo"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>df</td>
+                    <td>显示指定磁盘文件可用空间。如果没有文件名被指定，则所有当前被挂在的文件系统的可用空间将被显示。默认情况下，磁盘空间将以1kb为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示</td>
+                    <td><a href="#lthree"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>free</td>
+                    <td>用来查看当前内存情况</td>
+                    <td><a href="#lfour"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>clear</td>
+                    <td>将代码界面清空</td>
+                    <td><a href="#lfive"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>pwd</td>
+                    <td>查看当前目录</td>
+                    <td><a href="#lsix"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>cd</td>
+                    <td>跳转目录</td>
+                    <td><a href="#lseven"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>dir|ls</td>
+                    <td>查看当前目录文件和文件夹</td>
+                    <td><a href="#leight"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>file</td>
+                    <td>查看当前目录文件和文件夹的属性</td>
+                    <td><a href="#lnine"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>mkdir</td>
+                    <td>创建目录</td>
+                    <td><a href="#lnine"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>rm</td>
+                    <td>删除文件或目录</td>
+                    <td><a href="#leleven"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td> > | touch | echo ></td>
+                    <td>创建空文件的三种方式</td>
+                    <td><a href="#ltwelve"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>mv</td>
+                    <td>移动文件或者目录</td>
+                    <td><a href="#lthirteen"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>cp</td>
+                    <td>复制文件</td>
+                    <td><a href="#lfourteen"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- linux第一课 基本语法 list end -->
+
+        <!-- linux第二课 实用工具 list start -->
+        <div class="container">
+            <h2 id="two">linux实用工具<small >第二课</small></h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="##">#</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">linux实用工具</th>
+                    <th class="##">详解</th>
+                    <th class="##">案例</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>less</td>
+                    <td>在linux里面查看文件的时候，当文件比较多的时候，用less，就可以滚动查看了</td>
+                    <td><a href="#lsecondone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>help|--help|man</td>
+                    <td>查看帮助文档</td>
+                    <td><a href="#lsecondtwo"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>q</td>
+                    <td>退出</td>
+                    <td><a href="#lsecondthree"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>cat</td>
+                    <td>输出文件</td>
+                    <td><a href="#lsecondfour"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>grep</td>
+                    <td>文件匹配</td>
+                    <td><a href="#lsecondfive"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>|</td>
+                    <td>管道操作符</td>
+                    <td><a href="#lsecondsix"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>*</td>
+                    <td>通配符</td>
+                    <td><a href="#lsecondseven"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>locate</td>
+                    <td>定位</td>
+                    <td><a href="#lsecondeight"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>归档和打包</td>
+                    <td>归档和打包</td>
+                    <td><a href="#lsecondnine"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>apt</td>
+                    <td>安装软件的命令</td>
+                    <td><a href="#lsecondten"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>端口转发</td>
+                    <td>安装软件的命令</td>
+                    <td><a href="#lsecondeleven"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>ln -s</td>
+                    <td>符号链接</td>
+                    <td><a href="#lsecondtwelve"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- linux第二课 实用工具 list end -->
+
+        <!-- linux第三节课 start -->
+        <div class="container">
+            <h2 id="three">linux<small >第三课</small></h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="##">#</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">linux实用工具</th>
+                    <th class="##">详解</th>
+                    <th class="##">案例</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>sftp</td>
+                    <td>用sftp链接linux</td>
+                    <td><a href="#lthirdone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>nano</td>
+                    <td>编辑器</td>
+                    <td><a href="#lthirdtwo"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>多用户，多任务</td>
+                    <td>多用户，多任务</td>
+                    <td><a href="#lthirdthree"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>进程管理</td>
+                    <td>进程管理</td>
+                    <td><a href="#lthirdfour"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>安装mysql</td>
+                    <td>安装mysql</td>
+                    <td><a href="#lthirdfive"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- linux第三节课 end -->
+
+        <!-- linux第一课 基础命令篇 内容 start -->
+        <div class="container">
+            <h2>linux基础命令篇 <small>第一课</small></h2>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseOne" id="lone">date</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre>$ dateMon<br>Apr 3 17:39:36 CST 2017</pre>
+                        </div>
+                    </div>
                 </div>
-                <div id="collapseFive" class="panel-collapse collapse">
-                    <div class="panel-body ">
-                        <pre><i></i>快捷键ctrl+L
-快速清空代码界面，相当于使用clear命令，windows上面是cls命令</pre>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo" id="ltwo">cal</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre>     April 2017<br>Su Mo Tu We Th Fr Sa<br>                   1<br> 2  3  4  5  6  7  8<br> 9 10 11 12 13 14 15<br>16 17 18 19 20 21 22<br>23 24 25 26 27 28 29<br>30</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseThree" id="lthree">df [选项] [文件]</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><img src="img/df.png" alt="">
+    1.命令格式：
+      df [选项] [文件]
+    2.命令功能
+      显示指定磁盘文件可用空间。如果没有文件名被指定，则所有当前被挂在的文件系统的可用空间将被显示。默认情况下，磁盘空间将以1kb为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示
+    <i></i>以下可忽略
+    3.命令功能：
+        必要参数：
+        -a 全部文件系统列表
+        -h 方便阅读方式显示
+        -H 等于“-h”,但是计算式，1k=1000，而不是1k=1024
+        -i 显示inode信息
+        -k 区块为1024字节
+        -l 只显示本地文件系统
+        -m 区块为1048576字节
+        --no-sync  忽略 sync 命令
+        -P输出格式为POSIX
+        选择参数：
+        --block-size<区块大小>  指定区块大小
+        -t<文件系统类型>  只显示选定文件系统的磁盘信息
+        -x<文件系统类型>  不显示选定文件系统的磁盘信息
+        --help  显示帮助信息
+        --version  显示版本信息
+     <i></i><a href="http://www.cnblogs.com/peida/archive/2012/12/07/2806483.html" target="_brank">查看详情</a>
+                            <br><i></i>dev 设备<br>sd 统称一种存储设备<br>3个硬盘插口<br>sda<br>sdb<br>sdc<br><i></i>在linux下分区是以<br>sda1<br>sda2<br>sda3<br>use%硬盘使用百分比<br><i></i>挂载<br>设备连上了，连上了还看不到，由于没有一个具体的目录与它对应，那么我要把这个设备和一个具体的目录对应起来，这个过程就是挂载</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseFour" id="lfour">free</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><img src="img/free.png" alt="">
+    <i></i>Mem 内存
+    <i></i>Swap交换空间
+    当内存不够用的时候，会临时用硬盘来充当内存</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseFive" id="lfive">clear</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>快捷键ctrl+L
+    快速清空代码界面，相当于使用clear命令，windows上面是cls命令</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseSix" id="lsix">pwd</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>查看当前目录<br>/home/yichuxue</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseSeven" id="lseven">cd [dirName]</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>切换当前目录至dirName
+    yichuxue$ubuntu-yichuxue-server:~$ pwd
+    yichuxue$ubuntu-yichuxue-server:~$ /home/yichuxue/test1
+    yichuxue$ubuntu-yichuxue-server:~/test1$ cd /home/yichuxue/test2
+    yichuxue$ubuntu-yichuxue-server:~/test2$
+    <i></i>cd ..
+        返回上一级
+    yichuxue$ubuntu-yichuxue-server:~/test2$ cd ..
+    yichuxue$ubuntu-yichuxue-server:~$
+    <i></i>~
+    代表当前根目录(/home/yichuxue) 如果在其他文件夹下面，可以直接用 cd ~跳转到/home/yichuxue
+    <i></i>cd .
+    当前目录
+    <i></i>-
+    表示前一个目录
+    <i></i>注意事项：
+        在windows下面使用切换文件目录，需要跳盘符，在linux下面不需要，因为linux只有一个盘符就是/</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseEight" id="leight">dir|ls</a>
+                        </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>dir
+    查看当前目录里面的文件和文件夹
+    <i></i>ls
+    查看当前目录里面的文件和文件夹,h后面加-l显示目录的文件和文件夹的详细信息
+    例如：dir -l
+    例如：ls -l
+    <i></i>ls -a
+    把所有的文件都输出来
+    <i></i>d  rwxr-xr-x   2    root   root 4096 Apr  2 01:15 bin
+    类型  权限     链接  拥有者  组   大小         时间       名字
+    <i></i>l  link         链接
+    <i></i>d  directory    类型
+    <i></i>-  普通文件
+    <i></i>权限
+    rwx              r-x       r-x
+    拥有者权限  组权限  其他人权限
+    <i></i>r 读权限
+    <i></i>w 写权限
+    <i></i>x 执行权
+    <i></i>linux  是多用户，多任务操作系统
+    <i></i>windows 是单用户，多任务
+    <i></i>ll
+    和ls -a -l,ls -al 类似
+    <i></i>ls -d b*
+    只查看以b开头的目录或文件，用-d限制只输出文件夹
+                             </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseNine" id="lnine">file [filename]</a>
+                        </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <pre>查看当前文件或文件夹的属性
+    <i></i>file bin
+    bin:directory    为文件目录
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseTen" id="lten">mkdir [filename]</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTen" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>mkdir
+    创建一个目录或者文件夹  mkdir [filename]</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseEleven" id="leleven">rm</a>
+                        </h4>
+                    </div>
+                    <div id="collapseEleven" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>rmdir [filename]
+    只能删除文件夹
+    <i></i>rm [filename]
+    只能删除文件 rm [filename],rm [filename] [filename]
+    <i></i>rm *
+    删除全部文件
+    <i></i>rmdir *
+    删除全部文件夹
+    <i></i>rm -ri [filename]
+    -r递归删除文件，删除到最后把文件夹删除   -i每次删除的时候会提示你是否删除
+    </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseTwelve" id="ltwelve">> | touch | echo ></a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwelve" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>> empty.txt
+    <i></i>touch empty1.txt
+    touch的意思是更新文件，并不是创建文件，但是更新一个不存在的文件，就会创建一个文件
+    <i></i>echo > empty2.txt
+    echo创建文件的原理是重定向到一个文件里面去，就可以创建一个文件了
+    创建文件的三种方式
+    <i></i>echo 'i am yichuxue' > yichuxue.txt
+    输出重定向，意思是将i am yichuxue 放在yichuxue.txt这个文本目录里面，但是会覆盖里面的内容，如果是两个>>则是追加
+    <i></i>cat [filename]
+    查看文件里面的内容
+    <i></i>利用touch生成a到z的文件
+    yichuxue@ubuntu-yichuxue-server:~$ touch {a..z}.txt
+    会自动生成a到z的txt文件
+    </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseThirteen" id="lthirteen">mv [filename] [文件夹]</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThirteen" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre><i></i>mv [filename] [文件夹]
+    将一个文件复制到一个文件夹里面</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseFourteen" id="lfourteen">cp</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFourteen" class="panel-collapse collapse">
+                        <div class="panel-body ">
+                            <pre>cp
+    复制文件 cp [filename] [filename] 把一个文件拷贝成另一个文件</pre>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-success">
+        </div>
+        <!-- linux第一课 基础命令篇 内容 end -->
+
+
+        <!-- linux第二课 实用工具篇 内容 start -->
+        <div class="container">
+            <h2>linux实用工具篇 <small>第二课</small></h2>
+            <div class="panel-group" id="accordion1">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondOne" id="lsecondone">less</a>
+                        </h4>
+                    </div>
+                    <div id="secondOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>less
+    yichuxue@ubuntu-yichuxue-server:/etc$ less group</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondTwo" id="lsecondtwo">help|--help|man</a>
+                        </h4>
+                    </div>
+                    <div id="secondTwo" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>help|--help|man
+    都是查看属性的帮助信息，但是help只能查看linux自带的属性，--help可以查看其它已经安装的软件的命令信息，man可以滚动</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondThree" id="lsecondthree">q</a>
+                        </h4>
+                    </div>
+                    <div id="secondThree" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>q
+    当进入文件里面，或者用help查看帮助文档，如果要退出来，按q键</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondFour" id="lsecondfour">cat</a>
+                        </h4>
+                    </div>
+                    <div id="secondFour" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>cat
+    yichuxue@ubuntu-yichuxue-server:~$ cat a.txt b.txt
+    <i></i>cat除了可以输出文件之外，还可以写文件
+    yichuxue@ubuntu-yichuxue-server:~$ cat > test.py
+    print('boy')
+    print('girl')
+    yichuxue@ubuntu-yichuxue-server:~$ python3 test.py
+    boy
+    girl
+    <i></i>cat命令复制文件
+    yichuxue@ubuntu-yichuxue-server:~$ cat a.txt > b.txt
+    将文件a.txt 复制到 b.txt</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondFive" id="lsecondfive">grep</a>
+                        </h4>
+                    </div>
+                    <div id="secondFive" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>grep
+    yichuxue@ubuntu-yichuxue-server:/etc$ grep systemd group
+    <img src="img/grep.png" alt=""></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondSix" id="lsecondsix">|</a>
+                        </h4>
+                    </div>
+                    <div id="secondSix" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>|  管道操作符
+    yichuxue@ubuntu-yichuxue-server:/etc$ cat group | less
+    将cat group的输出变成less的输出</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondSeven" id="lsecondseven">*</a>
+                        </h4>
+                    </div>
+                    <div id="secondSeven" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>*
+    yichuxue@ubuntu-yichuxue-server:/etc$ rm *
+    删除当前文件夹里面的所有文件
+    yichuxue@ubuntu-yichuxue-server:/etc$ ls -l *.conf
+    找到etc目录下的所有以.conf的文件</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondEight" id="lsecondeight">locate</a>
+                        </h4>
+                    </div>
+                    <div id="secondEight" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>locate
+    yichuxue@ubuntu-yichuxue-server:~$ locate /to_search/a.txt
+    在整个目录里面查找to_search/a/txt 文件
+    <i></i>注意事项：
+    如果你的文件和文件夹是刚刚新建的，那么你是搜索不到的，因为locate搜索的是linux里面的数据库，
+    但是这个数据库是一天更新一次，所以你现在创建的文件夹是搜索不到的，那么我们要让他搜索到就需要
+    更新数据库,例如：
+    yichuxue@ubuntu-yichuxue-server:~$ sudo updatedb  <code>//更新数据局</code>
+    [sudo] password for yichuxue:      <code>//输入你的账号密码</code>
+    yichuxue@ubuntu-yichuxue-server:~$ locate to_search
+    <i></i>sudo
+    另外sudo命令用来以其他身份来执行命令，预设的身份为root。在/etc/sudoers中设置了可执行sudo
+    指令的用户。若其未经授权的用户企图使用sudo，则会发出警告的邮件给管理员。用户使用sudo时，
+    必须先输入密码，之后有5分钟的有效期限，超过期限则必须重新输入密码。
+    <img src="img/locate.png" alt="">
+    </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondNine" id="lsecondnine">归档和打包</a>
+                        </h4>
+                    </div>
+                    <div id="secondNine" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>归档文件
+    yichuxue@ubuntu-yichuxue-server:~$ mkdir to_archive  <code>创建一个to_archive文件夹</code>
+    yichuxue@ubuntu-yichuxue-server:~$ touch to_archive/{a..z}.txt  <code>创建a到z的txt文件</code>
+    yichuxue@ubuntu-yichuxue-server:~$ tar cf to_archive.tar to_archive
+    <code>tar打包方式  cf打包 to_archive.tar打包之后输出格式  to_archive打包的文件</code>
+    <i></i>查看打包文件
+    yichuxue@ubuntu-yichuxue-server:~$ tar tvf to_archive.tar
+    <code>tar文件格式 tf文件信息 tvf文件详细信息 to_archive.tar被打包的文件</code>
+    <i></i>释放文件
+    yichuxue@ubuntu-yichuxue-server:~$ mkdir new
+    yichuxue@ubuntu-yichuxue-server:~$ cd new
+    yichuxue@ubuntu-yichuxue-server:~/new$ tar xf ../to_archive.tar
+    <code>在释放文件的时候，需要新建一个文件夹，然后进入文件里面释放，不然会把现有文件相同的覆盖</code>
+    <i></i>压缩文件
+    yichuxue@ubuntu-yichuxue-server:~to_archive$ ls
+    <code>a.txt b.txt c.txt ... z.txt</code>
+    yichuxue@ubuntu-yichuxue-server:~$ gzip a.txt
+    <code>a.txt.gz b.txt c.txt d.txt ... z.txt</code>
+    <i></i>解压
+    yichuxue@ubuntu-yichuxue-server:~$ gunzip a.txt.gz
+    <code>a.txt b.txt c.txt ... z.txt</code>
+    <i></i>压缩不删除源文件
+    yichuxue@ubuntu-yichuxue-server:~$ gzip -k a.txt
+    <code>a.txt.gz a.txt b.txt c.txt d.txt ... z.txt</code>
+    </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion"
-                           href="#collapseSix">pwd</a>
+                        <a data-toggle="collapse" data-parent="#accordion1"
+                           href="#secondTen" id="lsecondone">apt</a>
                     </h4>
                 </div>
-                <div id="collapseSix" class="panel-collapse collapse">
-                    <div class="panel-body ">
-                        <pre><i></i>查看当前目录<br>/home/yichuxue</pre>
+                <div id="secondTen" class="panel-collapse collapse">
+                    <div class="panel-body" >
+                            <pre><i></i>apt
+    yichuxue@ubuntu-yichuxue-server:/etc$ sudo apt pip
+    <code>安装pip</code>
+    <i></i>查看包
+    yichuxue@ubuntu-yichuxue-server:/etc$ sudo apt list | grep python | less
+    yichuxue@ubuntu-yichuxue-server:/etc$ sudo apt install openssh-server  <code>安装</code>
+    yichuxue@ubuntu-yichuxue-server:/etc$ sudo service sshd restart  <code>重启ssh服务</code>
+    yichuxue@ubuntu-yichuxue-server:/etc$ ip a  <code>查看ip</code>
+                            </pre>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion"
-                           href="#collapseSeven">cd [dirName]</a>
-                    </h4>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondEleven" id="lsecondeleven">端口转发</a>
+                        </h4>
+                    </div>
+                    <div id="secondEleven" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>VirtualBox端口转发
+    第一步：<br>
+    <img src="img/virtualbox.png" alt="">
+    <br><i></i>第二步：<br>
+    <img src="img/virtualbox2.png" alt="">
+    <br><i></i>第三步：<br>
+    <img src="img/virtualbox3.png" alt="">
+    <br><i></i>完成<br>
+    <i></i>VM端口转发
+    <code>C:ProgramData\VMware下面有一个配置文件，vmnetnat.conf</code>
+    <code>然后用管理员权限打开编辑器，并用编辑器打开vmnetnat.conf</code>
+    <code>然后找到ssh,找到[incomingtcp],</code>
+    <img src="img/ssh2.png" alt="">
+    <code>然后在[incomingtcp]下面最后一行加上2222 = 192.168.64.128:22</code>
+    <code>然后在电脑上的服务里面，关闭然后在打开VMware NAT Service</code>
+    <img src="img/ssh3.png" alt="">
+    <code>使用桥接模式来实行</code>
+    <code>桥接模式下</code>
+    yichuxue@ubuntu-yichuxue-server:/etc$ ip a
+    <code>会输出电脑的ip地址，然后用其他电脑ping一下，可以被ping到</code>
+    <code>nat模式下不会被ping到</code>
+    <code>但是在自己的电脑上可以ping到虚拟机，并且也可以用他的ip连上ssh</code>
+    <code>有个问题就是在其他电脑上ping不到，那么其他机子也连不上ssh</code>
+                            </pre>
+                        </div>
+                    </div>
                 </div>
-                <div id="collapseSeven" class="panel-collapse collapse">
-                    <div class="panel-body ">
-                        <pre><i></i>切换当前目录至dirName
-yichuxue$ubuntu-yichuxue-server:~$ pwd
-yichuxue$ubuntu-yichuxue-server:~$ /home/yichuxue/test1
-yichuxue$ubuntu-yichuxue-server:~/test1$ cd /home/yichuxue/test2
-yichuxue$ubuntu-yichuxue-server:~/test2$
-<i></i>cd ..
-    返回上一级
-yichuxue$ubuntu-yichuxue-server:~/test2$ cd ..
-yichuxue$ubuntu-yichuxue-server:~$
-<i></i>注意事项：
-    在windows下面使用切换文件目录，需要跳盘符，在linux下面不需要，因为linux只有一个盘符就是/</pre>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#secondTwelve" id="lsecondtwelve">符号链接</a>
+                        </h4>
+                    </div>
+                    <div id="secondTwelve" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>ln -s
+    yichuxue@ubuntu-yichuxue-server:~/to_link$ ln -s ~/to_link/target ../my_link
+    <code>ln -s创建一个快捷方式 ~/to_link/target快捷方式的文件或文件夹 ../my_link快捷方式的地址</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+        <!-- linux第二课 实用工具篇 内容 end -->
+
+        <!-- linux第三课 内容 start -->
+        <div class="container">
+            <h2>linux<small>第三课</small></h2>
+            <div class="panel-group" id="accordion2">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#thirdOne" id="lthirdone">sftp</a>
+                        </h4>
+                    </div>
+                    <div id="thirdOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>sftp
+    <img src="img/sftp1.png" alt="">
+    <img src="img/sftp2.png" alt="">
+    <code>域名和网址的区别</code>
+    <code>网址</code><code>
+    www.baidu.com
+    map.baidu.com
+    www.qq.com
+    www.163.com
+    </code>
+    <code>域名</code><code>
+    baidu.com
+    qq.com
+    163.com
+    </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#thirdTwo" id="lthirdtwo">nano</a>
+                        </h4>
+                    </div>
+                    <div id="thirdTwo" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>nano
+    <code>^代表ctrl键</code>
+    <code>M代表alt键</code>
+    <code>用nano编辑器写一个99乘法表</code><code>
+    #! /usr/bin/env python3
+    # coding: utf-8
+
+    for i in range(1, 10):
+        for j in range(1, 10):
+            if i<=j:
+                print('%d*%d=%2d'%(i,j,i*j),end=' ')
+        print()
+    </code>
+    <code>nano快捷键</code>
+    <code>
+    ^C Write Out    保存当前编辑的信息
+    ^W Where Is     搜索
+    ^K Cut Text     剪切一行
+    ^U              粘贴
+    Alt+U           撤销
+    ^R              插入一个文件
+    </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#thirdThree" id="lthirdthree">多任务</a>
+                        </h4>
+                    </div>
+                    <div id="thirdThree" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>多任务
+    <code>先写一个死循环</code>
+    <code>
+    #! /usr/bin/env python3
+    # coding: utf-8
+
+    import time
+
+    while True:
+        print('haha')
+        time.sleep(2)
+    </code>
+    <img src="img/ctrlz.png" alt="">
+    <code>
+    当死循环执行开始之后，要让他停下来有三种方法
+    1.直接关电源
+    2.ctrl+c  键盘打断，用一个键盘发一个异常
+    3.ctrl+z  讲脚本停下来
+    </code>
+    <img src="img/ctrlz1.png" alt="">
+    <code>恢复脚本</code>
+    <code>
+    yichuxue@ubutun-yichuxue-server:~$ fg %1
+    fg是恢复的意思  %1  百分号后面跟着的是脚本的序列
+    </code>
+    <code>jobs 查看所有运行的任务</code>
+    <img src="img/jobs.png" alt="">
+    <code>bg  后台运行</code>
+    <code>
+    yichuxue@ubutun-yichuxue-server:~$ bg %2
+    <img src="img/bg.png" alt="">
+    最后面的&符号 表示它在后台运行
+    </code>
+    <code>如果要停止一个后台程序，要先把他调到前台，然后再关闭</code>
+    <code>yichuxue@ubutun-yichuxue-server:~$ fg %2</code>
+    <code>然后ctrl+c</code>
+    <code>我们还可以直接执行脚本的时候丢到后台
+    yichuxue@ubutun-yichuxue-server:~$ python3 link_to.py &</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#thirdFour" id="lthirdfour">进程管理</a>
+                        </h4>
+                    </div>
+                    <div id="thirdFour" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>进程管理
+    <code>一个进程里面可以有多个线程</code>
+    <code>查看所有进程
+    yichuxue@ubutun-yichuxue-server:~$ top
+    查看此时此刻正在运行的进程
+    yichuxue@ubutun-yichuxue-server:~$ ps
+    查看所有此时此刻正在运行的进程
+    yichuxue@ubutun-yichuxue-server:~$ ps ax
+    查看完整的信息，并且可以滚动
+    yichuxue@ubutun-yichuxue-server:~$ ps ax | less
+    杀进程
+    yichuxue@ubutun-yichuxue-server:~$ fg %1
+    </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#thirdFive" id="lthirdfive">安装mysql</a>
+                        </h4>
+                    </div>
+                    <div id="thirdFive" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>安装mysql
+    <code>yichuxue@ubutun-yichuxue-server:~$ sudo apt install mysql-server</code>
+    <img src="img/mysql.png" alt="">
+    <code>请输入密码，一定要输入密码，不然你的密码是随机的</code>
+    <img src="img/mysql1.png" alt="">
+    <code>再次输入密码</code>
+    <code>测试自己的mysql是否安装成功</code>
+    <code>yichuxue@ubutun-yichuxue-server:~$ mysql -uroot -padmin</code>
+    <code>mysql 数据库 -u指定用户 root表示root用户 -p指定密码 admin数据库密码</code>
+    <code>调出mysql的编码集或字符集</code>
+    <code>yichuxue@ubutun-yichuxue-server:~$ SHOW VARIABLES LIKE '%char%';</code>
+    <img src="img/mysql2.png" alt="">
+    <code><i></i>显示环境变量
+    yichuxue@ubutun-yichuxue-server:~$ SHOW VARIABLES LIKE '%colla%';
+    SHOW显示 VARIABLES环境变量 LIKE %%所有字符  所有包含colla的字符
+    <i></i>在修改之前要把他的服务给关掉，先跳转到/etc/mysql/下面
+    yichuxue@ubutun-yichuxue-server:~$ sudo service mysql stop
+    停止mysql服务， service服务 指定mysql 让他停止
+    <i></i>查看mysql是否被关闭
+    yichuxue@ubutun-yichuxue-server:~$ sudo service mysql status
+    如果最前面的那个点是灰色的，代表被关闭了，如果是绿色的代表是开着的</code>
+    <img src="img/mysql3.png" alt="">
+    <code>然后修改配置文件
+    yichuxue@ubutun-yichuxue-server:~$ sudo nano my.cnf
+    <img src="img/mysql4.png" alt="">
+    然后添加配置
+    [client]
+    default-character-set = utf-8
+
+    [mysqld]
+    character-set-server = utf8
+    collation-server = utf8_general_ci
+    <img src="img/mysql5.png" alt="">
+
+    添加完配置之后，保存退出，然后启动服务
+    yichuxue@ubutun-yichuxue-server:~$ sudo service mysql start
+    然后在进入mysql
+    yichuxue@ubutun-yichuxue-server:~$ mysql -uroot -padmin
+    进入之后再来查看mysql的状态
+    yichuxue@ubutun-yichuxue-server:~$ SHOW VARIABLES LIKE '%char%';
+    <img src="img/mysql6.png" alt="">
+    yichuxue@ubutun-yichuxue-server:~$ SHOW VARIABLES LIKE '%colla%';
+    <img src="img/mysql7.png" alt="">
+
+        symbolic  是一个快捷方式
+    </code>
+    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- linux第三课 内容 end -->
+
+        <!-- mysql学习笔记 start -->
+        <div class="container" style="margin-top:50px;">
+            <h1>mysql学习笔记 <small>课程笔记</small></h1>
+        </div>
+
+
+        <!-- mysql第一课 基本语法 list start -->
+        <div class="container">
+            <h2 id="one">mysql基本语法<small >第一课</small></h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="">#</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">mysql常用命令</th>
+                    <th class="">详解</th>
+                    <th class="">案例</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>date</td>
+                    <td>输出linux当前的时间</td>
+                    <td><a href="#mone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- mysql第一课 基本语法 list end -->
+
+        <!-- mysql第一课 基础命令篇 内容 start -->
+        <div class="container">
+            <h2>mysql基础命令篇 <small>第一课</small></h2>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mOne" id="mone">date</a>
+                        </h4>
+                    </div>
+                    <div id="mOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre>$ dateMon<br>Apr 3 17:39:36 CST 2017</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- mysql第一课 基础命令篇 内容 end -->
+    </div>
 	<script type="text/javascript">
-		
+
 	</script>
  </body>
 </html>
