@@ -1040,7 +1040,7 @@
 
         <!-- mysql第一课 基本语法 list start -->
         <div class="container">
-            <h2 id="one">mysql基本语法<small >第一课</small></h2>
+            <h2 id="two">mysql基本语法<small >第一课</small></h2>
             <table class="table table-bordered">
                 <tr>
                     <th class="">#</th>
@@ -1050,9 +1050,33 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>date</td>
-                    <td>输出linux当前的时间</td>
+                    <td>SHOW DATABASES;</td>
+                    <td>查看有哪些数据库的信息</td>
                     <td><a href="#mone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>DROP DATABASE 'DB2';</td>
+                    <td>删除数据库，引号里面显示被删除的数据库</td>
+                    <td><a href="#mtwo"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>USE 'DB2';</td>
+                    <td>使用数据库</td>
+                    <td><a href="#mthree"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>数据库常用命令</td>
+                    <td>数据库常用命令</td>
+                    <td><a href="#mfour"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>数据库客户端登录</td>
+                    <td>数据库客户端登录</td>
+                    <td><a href="#mfive"><button class="btn btn-success">查看</button></a></td>
                 </tr>
             </table>
         </div>
@@ -1066,16 +1090,123 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion"
-                               href="#mOne" id="mone">date</a>
+                               href="#mOne" id="mone">SHOW DATABASES;</a>
                         </h4>
                     </div>
                     <div id="mOne" class="panel-collapse collapse">
                         <div class="panel-body" >
-                            <pre>$ dateMon<br>Apr 3 17:39:36 CST 2017</pre>
+                            <pre><i></i>SHOW DATABASES;
+<code>yichuxue@ubutun-yichuxue-server:~$ mysql -uroot -padmin
+mysql> SHOW DATABASES;</code>
+<img src="img/mysql10.png" alt=""></pre>
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mTwo" id="mtwo">DROP DATABASE 'DB2';</a>
+                        </h4>
+                    </div>
+                    <div id="mTwo" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>DROP DATABASE 'DB2';
+<code>yichuxue@ubutun-yichuxue-server:~$ mysql -uroot -padmin
+    mysql> DROP DATABASE 'DB2';</code>
+<img src="img/mysql10.png" alt=""></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mThree" id="mthree">USE 'DB2';</a>
+                        </h4>
+                    </div>
+                    <div id="mThree" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>USE 'DB2';
+<code>yichuxue@ubutun-yichuxue-server:~$ mysql -uroot -padmin
+进入数据库
+mysql> DROP DATABASE 'DB2';
+停止数据库 'DB2'
+mysql> USE 'django';
+使用数据库 'django'
+mysql> SELECT DATABASE();
+查看当前所在数据库
+mysql> SHOW TABLES;
+查看当前数据库里面的表
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mTwo" id="mtwo">数据库常用命令</a>
+                        </h4>
+                    </div>
+                    <div id="mTwo" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>数据库常用命令
+<code><i></i>显示所有数据库
+mysql> SHOW DATABSES;
+<i></i>选择数据库
+mysql> use '数据库名'
+<i></i>显示数据库中的表
+mysql> SHOW TABLES;
+<i></i>显示数据表的结构
+mysql> DESCRIBE '表的名字';
+<i></i>显示表中的记录
+mysql> SELECT * FROM
+<i></i>建库
+mysql> CREATE DATABASE 库名字;
+<i></i>删库
+mysql> DROP DATABASE 库名字;
+<i></i>删除表
+mysql> DROP TABLES 'teacher';
+<i></i>创建表
+mysql> CREATE TABLE 'django'.'teacher';
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mTwo" id="mtwo">数据库客户端登录</a>
+                        </h4>
+                    </div>
+                    <div id="mTwo" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>数据库客户端登录
+<code><i></i>首先查看数据库服务是否启动
+yichuxue@ubutun-yichuxue-server:~$ sudo service mysql status
+<i></i>停止数据库的服务器
+yichuxue@ubutun-yichuxue-server:~$ sudo service mysql stop
+<i></i>启动数据库的服务器
+yichuxue@ubutun-yichuxue-server:~$ sudo service mysql start
+<i></i>登录mysql
+yichuxue@ubutun-yichuxue-server:~$ mysql -hlocalhost -P3306 -uroot -padmin
+-h服务器地址 -P端口号 -u用户 -p密码
+yichuxue@ubutun-yichuxue-server:~$ mysql --host=localhost --post=3306 --user=root --password=admin
 
+*数据库里面的退出是 q和ctrl+c和exit
+*在linux里面登录数据库可以不输入账号，只输入密码
+yichuxue@ubutun-yichuxue-server:~$ mysql -p
+Enter password:
+当你不输入账号，只输入密码登录mysql的时候，他的默认账号是你的linux的用户名。例如我现在的就是yichuxue
+查看自己的当前linux账户
+yichuxue@ubutun-yichuxue-server:~$ echo $USER
+
+</code></pre>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- mysql第一课 基础命令篇 内容 end -->
