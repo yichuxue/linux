@@ -1078,6 +1078,18 @@
                     <td>数据库客户端登录</td>
                     <td><a href="#mfive"><button class="btn btn-success">查看</button></a></td>
                 </tr>
+                <tr>
+                    <td>6</td>
+                    <td>关系型数据库</td>
+                    <td>关系型数据库</td>
+                    <td><a href="#msix"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>数据库表的基本用法</td>
+                    <td>数据库表的基本用法</td>
+                    <td><a href="#mseven"><button class="btn btn-success">查看</button></a></td>
+                </tr>
             </table>
         </div>
         <!-- mysql第一课 基本语法 list end -->
@@ -1204,6 +1216,61 @@ Enter password:
 yichuxue@ubutun-yichuxue-server:~$ echo $USER
 
 </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mSix" id="msix">关系型数据库</a>
+                        </h4>
+                    </div>
+                    <div id="mSix" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>关系型数据库
+<code><i></i>什么是关系型数据库
+简单来说，就是平时使用的SQL数据
+商用：Oracle，PostgreSQL，MariaDB（MySQL5.6）
+小型：SQLite手机端
+系统：一堆工具来使用操作和管理我们的关系型数据库（即一堆写好的程序）
+</code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#mSeven" id="mseven">数据库表的基本用法</a>
+                        </h4>
+                    </div>
+                    <div id="mSeven" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>mysql输入错误的时候
+<code>mysql> \c  退出当前编辑
+<i></i>创建一个表
+mysql> CREATE TABLE `my_table` (
+        gonghao  INT,
+        xingming VARCHAR(20)
+        );
+<i></i>查看表的内容
+mysql> SHOW CREATE TABLE `my_table`\G
+<img src="img/sql2.png" alt="">
+<i></i>查看表的详细内容
+mysql> DESCRIBE `my_table`;
+<img src="img/sql1.png" alt="">
+Filed   表示列的名字
+Type    列的类型
+Null    这个列可不可以是空的
+key     键
+Default 默认值
+Extra   额外的信息
+<i></i>如果表没有就创建，有就不创建
+mysql> CREATE DATABASE IF NOT EXISTS 'django';
+</code>
+</pre>
                         </div>
                     </div>
                 </div>
