@@ -1277,6 +1277,73 @@ mysql> CREATE DATABASE IF NOT EXISTS 'django';
             </div>
         </div>
         <!-- mysql第一课 基础命令篇 内容 end -->
+
+        <!-- mysql第二课 基本语法 list start -->
+        <div class="container">
+            <h2 id="three">mysql基本语法<small >第二课</small></h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="">#</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">mysql常用命令</th>
+                    <th class="">详解</th>
+                    <th class="">案例</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>INSERT INTO</td>
+                    <td>数据库插入数据</td>
+                    <td><a href="#tone"><button class="btn btn-success">查看</button></a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- mysql第二课 基本语法 list end -->
+
+        <!-- mysql第二课 基础命令篇 内容 start -->
+        <div class="container">
+            <h2>mysql基础命令篇 <small>第二课</small></h2>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"
+                               href="#tOne" id="tone">INSERT INTO</a>
+                        </h4>
+                    </div>
+                    <div id="tOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <pre><i></i>SHOW DATABASES;
+mysql> INSERT INTO `teacher`(`t_id`,`name`,`duty`,`rank`)
+       VALUES ('0001','qiangzi','Instructor',5)
+<img src="img/sql11.png" alt="">
+<i></i>然后检查是否插入进去了，SELECT * FROM `teacher`;
+<img src="img/sql12.png" alt="">
+<i></i>指定文件查看
+mysql> SELECT `Host`,`User`,`authentication_string` FROM `user`;
+<img src="img/sql13.png" alt="">
+<i></i>查看有哪些用户名是可以在公网上面访问的
+mysql> SELECT `Host`,`User` FROM `user`
+    WHERE `Host` = '%'
+<img src="img/sql14.png" alt="">
+<i></i>查看包含有local
+mysql> SELECT `Host`,`User` FROM `user`
+    WHERE `Host` LIKE '%local%'
+<img src="img/sql15.png" alt="">
+<i></i>LIKE表示模式匹配
+<i></i>修改表
+mysql> UPDATE `test_table`
+    SET `name`='firstname'
+<img src="img/sql16.png" alt="">
+<i></i>删除表
+mysql> DELETE `test_table`
+    WHERE 1
+<code>删除全部表数据</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mysql第二课 基础命令篇 内容 end -->
     </div>
 	<script type="text/javascript">
 
